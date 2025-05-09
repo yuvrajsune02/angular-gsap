@@ -1,6 +1,9 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import gsap from 'gsap';
 import SplitText from 'gsap/SplitText';
+
+import { HeaderComponent } from './header/header.component';
+import { CounterService } from './services/counter.service';
 
 gsap.registerPlugin(SplitText);
 @Component({
@@ -8,9 +11,16 @@ gsap.registerPlugin(SplitText);
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  imports: [HeaderComponent],
 })
 export class AppComponent {
   title = 'angular-gsap';
+
+  constructor(public counterService: CounterService) {}
+
+  increment() {
+    this.counterService.increment();
+  }
   // @ViewChild('splitElement') splitElement!: ElementRef;
   // private splitAnimation: gsap.core.Animation | null = null;
 
