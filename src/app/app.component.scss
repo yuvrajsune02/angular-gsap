@@ -10,3 +10,43 @@
     "M 10,50 L 90,50 A 10,10 0,0,0 100,40 L 100,10 A 10,10 0,0,1 110,0 L 190,0 A 10,10 0,0,1 200,10 L 200,190 A 10,10 0,0,1 190,200 L 10,200 A 10,10 0,0,1 0, 190 L 0,60 A 10,10 0,0,1 10,50 Z "
   );
 }
+
+.card {
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 16px;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__image {
+    display: flex;
+
+    img {
+      min-width: 200px;
+      max-height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: center;
+    button {
+      cursor: pointer;
+      background: white;
+      color: black;
+      border: 1px solid black;
+      border-radius: 16px;
+      padding: 8px 12px;
+    }
+  }
+}
